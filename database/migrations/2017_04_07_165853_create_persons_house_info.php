@@ -21,6 +21,9 @@ class CreatePersonsHouseInfo extends Migration
             $table->integer('rent');
             $table->text('description');
             $table->timestamps();
+
+
+            $table->softDeletes();
         });
     }
 

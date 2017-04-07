@@ -19,6 +19,8 @@ class CreatePersonsJoinStatus extends Migration
             $table->text('not_active_reason');
             $table->date('start_date');
             $table->timestamps();
+
+            $table->softDeletes();
         });
     }
 

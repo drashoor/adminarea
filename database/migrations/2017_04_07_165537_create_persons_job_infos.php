@@ -26,6 +26,9 @@ class CreatePersonsJobInfos extends Migration
             $table->integer('other_take');
             $table->integer('other_salary');
             $table->timestamps();
+
+
+            $table->softDeletes();
         });
     }
 

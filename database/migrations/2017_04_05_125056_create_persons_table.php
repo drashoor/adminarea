@@ -13,10 +13,36 @@ class CreatePersonsTable extends Migration
     public function up()
     {
         Schema::create('persons', function (Blueprint $table) {
+
             $table->increments('id');
-            $table->string('firstname');
-            $table->string('lastname');
+
+            $table->string('first_name');
+            $table->string('second_name');
+            $table->string('third_name');
+            $table->string('last_name');
+            $table->string('full_name');
+
+            $table->date('birth_date');
+
+            $table->integer('national_id')->default(0);
+
+            $table->string('gender_cd');
+            $table->string('social_status_cd');
+
+            $table->string('region_cd');
+            $table->string('section_cd');
+            $table->string('mosque_cd');
+            $table->string('full_address');
+
+            $table->string('blood_type');
+
+            $table->string('current_degree');
+
+            $table->string('original_town');
+
             $table->timestamps();
+
+            $table->softDeletes();
         });
     }
 

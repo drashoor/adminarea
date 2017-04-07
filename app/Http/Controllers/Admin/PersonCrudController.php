@@ -29,15 +29,110 @@ class PersonCrudController extends CrudController
         |--------------------------------------------------------------------------
         */
 
-        $this->crud->setFromDb();
+        // $this->crud->setFromDb();
+
+        $this->crud->filters(); // gets all the filters
 
         // ------ CRUD FIELDS
+        $this->crud->addField([
+            'name' => 'first_name',
+            'label' => 'الاسم الأول',
+            'type' => 'text',
+            'attributes' => [
+                'placeholder' => 'الاسم الأول'
+            ],
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-3'
+            ]
+        ]);
+
+        $this->crud->addField([
+            'name' => 'second_name',
+            'label' => 'الأب',
+            'type' => 'text',
+            'attributes' => [
+                'placeholder' => 'الأب'
+            ],
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-3'
+            ]
+        ]);
+
+        $this->crud->addField([
+            'name' => 'third_name',
+            'label' => 'الجد',
+            'type' => 'text',
+            'attributes' => [
+                'placeholder' => 'الجد'
+            ],
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-3'
+            ]
+        ]);
+
+        $this->crud->addField([
+            'name' => 'last_name',
+            'label' => 'العائلة',
+            'type' => 'text',
+            'attributes' => [
+                'placeholder' => 'العائلة'
+            ],
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-3'
+            ]
+        ]);
+
+        $this->crud->addField([
+            'name' => 'full_name',
+            'label' => 'الاسم كاملا',
+            'type' => 'text',
+            'attributes' => [
+                'placeholder' => 'الاسم كاملا'
+            ],
+        ]);
+
+        $this->crud->addField([
+            'name' => 'current_degree',
+            'label' => 'الدرجة',
+            'type'        => 'radio',
+            'options'     => [ // the key will be stored in the db, the value will be shown as label;
+                1 => "أخ",
+                2 => "نقيب",
+                3 => "رقيب"
+            ],
+            'inline' => true
+        ]);
+        $this->crud->addField([
+            // date_picker
+            'name' => 'birth_date',
+            'type' => 'date_picker',
+            'label' => 'تاريخ الميلاد',
+            // optional:
+            'date_picker_options' => [
+                'todayBtn' => true,
+                'format' => 'dd-mm-yyyy',
+                'language' => 'ar'
+            ],
+        ]);
+
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');
         // $this->crud->removeField('name', 'update/create/both');
         // $this->crud->removeFields($array_of_names, 'update/create/both');
 
         // ------ CRUD COLUMNS
+        $this->crud->addColumn([
+            'name' => 'full_name', // The db column name
+            'label' => 'الاسم كاملا', // Table column heading
+            'type' => 'text'
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'current_degree', // The db column name
+            'label' => 'الدرجة', // Table column heading
+            'type' => 'text'
+        ]);
+
         // $this->crud->addColumn(); // add a single column, at the end of the stack
         // $this->crud->addColumns(); // add multiple columns, at the end of the stack
         // $this->crud->removeColumn('column_name'); // remove a column from the stack

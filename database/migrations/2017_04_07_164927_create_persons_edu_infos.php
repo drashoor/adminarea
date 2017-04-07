@@ -21,6 +21,9 @@ class CreatePersonsEduInfos extends Migration
             $table->date('graduation_year');
             $table->text('notes');
             $table->timestamps();
+
+
+            $table->softDeletes();
         });
     }
 

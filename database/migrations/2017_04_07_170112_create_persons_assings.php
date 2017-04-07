@@ -20,6 +20,9 @@ class CreatePersonsAssings extends Migration
             $table->date('end_date');
             $table->string('description');
             $table->timestamps();
+
+
+            $table->softDeletes();
         });
     }
 

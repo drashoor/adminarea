@@ -18,6 +18,9 @@ class CreatePersonsJoinInfos extends Migration
             $table->string('grade');
             $table->date('grade_date');
             $table->timestamps();
+
+
+            $table->softDeletes();
         });
     }
 

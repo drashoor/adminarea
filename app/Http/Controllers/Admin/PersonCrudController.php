@@ -102,18 +102,17 @@ class PersonCrudController extends CrudController
             ],
             'inline' => true
         ]);
-        $this->crud->addField([
-            // date_picker
-            'name' => 'birth_date',
-            'type' => 'date_picker',
-            'label' => 'تاريخ الميلاد',
-            // optional:
-            'date_picker_options' => [
-                'todayBtn' => true,
-                'format' => 'dd-mm-yyyy',
-                'language' => 'ar'
-            ],
-        ]);
+//        $this->crud->addField([
+//            // date_picker
+//            'name' => 'birth_date',
+//            'type' => 'date_picker',
+//            'label' => 'تاريخ الميلاد',
+//            // optional:
+//            'date_picker_options' => [
+//                'todayBtn' => false,
+//                'format' => 'dd-mm-yyyy'
+//            ],
+//        ]);
 
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');

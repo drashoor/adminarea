@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePersonsTable extends Migration
+class CreatePersons extends Migration
 {
     /**
      * Run the migrations.
@@ -29,16 +29,16 @@ class CreatePersonsTable extends Migration
             $table->string('gender_cd');
             $table->string('social_status_cd');
 
-            $table->string('region_cd');
-            $table->string('section_cd');
-            $table->string('mosque_cd');
-            $table->string('full_address');
+            $table->string('region_cd')->nullable();
+            $table->string('section_cd')->nullable();
+            $table->string('mosque_cd')->nullable();
+            $table->string('full_address')->nullable();
 
-            $table->string('blood_type');
+            $table->string('blood_type')->nullable();
 
             $table->string('current_degree');
 
-            $table->string('original_town');
+            $table->string('original_town')->nullable();
 
             $table->timestamps();
 

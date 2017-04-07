@@ -25,7 +25,13 @@ class PersonRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'first_name' => 'required|min:1|max:255',
+            'second_name' => 'required|min:1|max:255',
+            'third_name' => 'required|min:1|max:255',
+            'last_name' => 'required|min:1|max:255',
+            'full_name' => 'required|min:1|max:255',
+            'birth_date' => 'required|date',
+            'current_degree' => 'required'
         ];
     }
 

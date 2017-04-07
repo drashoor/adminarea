@@ -16,12 +16,23 @@ class Person extends Model
     */
 
     protected $table = 'persons';
-    //protected $primaryKey = 'id';
+
+    // protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-    protected $fillable = ['firstname', 'lastname'];
     // protected $hidden = [];
-    // protected $dates = [];
+
+    protected $fillable = [
+        'first_name',
+        'second_name',
+        'third_name',
+        'last_name',
+        'full_name',
+        'birth_date',
+        'current_degree',
+    ];
+
+    protected $dates = ['birth_date'];
 
     /*
     |--------------------------------------------------------------------------

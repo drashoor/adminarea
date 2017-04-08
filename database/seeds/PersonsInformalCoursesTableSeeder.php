@@ -1,3 +1,4 @@
+
 <?php
 
 use App\Models\Person;
@@ -17,7 +18,7 @@ class PersonsInformalCoursesTableSeeder extends Seeder
 
         foreach (range(1,10) as $index) {
             PersonsInformalCourse::create(array(
-                'person_id' => (Person::inRandomOrder()->first())->id ,
+                'person_id' => Person::inRandomOrder()->first()->id ,
                 'type' => $faker->name ,
                 'name' => $faker->name ,
                 'hours_count' => $faker->numberBetween($min=20, $max=90) ,
@@ -25,8 +26,7 @@ class PersonsInformalCoursesTableSeeder extends Seeder
                 'notes' => $faker->text ,
 
                 'from_date' => $faker->date($format = 'Y-m-d', $max = 'now') ,
-                'to_date' => $faker->date($format = 'Y-m-d', $max = 'now') ,
-
+                'to_date' => $faker->date($format = 'Y-m-d', $max = 'now')
             ));
         }
     }

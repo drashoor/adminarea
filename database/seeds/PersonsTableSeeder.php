@@ -20,14 +20,15 @@ class PersonsTableSeeder extends Seeder
                 'second_name' => $faker->firstNameMale ,
                 'third_name' => $faker->firstNameMale ,
                 'last_name' => $faker->lastName ,
+
                 'full_name' => $faker->name ,
+
+                'birth_date' => $faker->date($format = 'Y-m-d', $max = 'now') ,
+                'national_id' => $faker->unique()->randomNumber($nbDigits = 9, $strict = false) ,
+
                 'gender_cd' => $faker->randomElement(['male', 'female']) ,
                 'social_status_cd' => $faker->randomElement(['single', 'married', 'widowed', 'divorced']) ,
                 'current_degree' => $faker->randomElement(['a', 'b', 'c']) ,
-
-                'birth_date' => $faker->date($format = 'Y-m-d', $max = 'now') ,
-
-                'national_id' => $faker->unique()->randomNumber($nbDigits = 9, $strict = false) ,
 
             ]);
         }

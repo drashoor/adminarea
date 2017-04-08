@@ -46,6 +46,10 @@ class Person extends Model
     |--------------------------------------------------------------------------
     */
 
+    public function courses(){
+        return $this->hasMany('App\Models\PersonsInformalCourse');
+    }
+
     /*
     |--------------------------------------------------------------------------
     | SCOPES
